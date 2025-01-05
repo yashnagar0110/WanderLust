@@ -1,0 +1,89 @@
+<% layout("/layouts/boilerplate") -%>
+
+<div class="row">
+    <div class="col-8 offset-2">
+        <br>
+        <h1 style="text-align: center;">Create a New Listing</h1><br>
+        <div class="box">
+            <form method="post" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label"> &nbsp;Title</label>
+                    <input 
+                    type="text" 
+                    class="form-control col-md-6"
+                    placeholder="Enter Title" 
+                    name="listings[title]" 
+                    required>
+                    <div class="valid-feedback">
+                       Title Looks good &#128512;!
+                    </div>
+                    <div class="invalid-feedback">
+                        Title Should not be empty &#128544;!
+                     </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"> &nbsp;Description</label>
+                    <textarea 
+                    class="form-control col-md-6"
+                    placeholder="Enter Description" 
+                    name="listings[description]" 
+                    required></textarea>
+                    <div class="invalid-feedback">
+                        Please Enter Short Description!
+                     </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"> &nbsp;Add Image</label>
+                    <input type="file" 
+                    class="form-control" 
+                    name="listings[image]"
+                    required>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label class="form-label"> &nbsp;Price</label>
+                        <input 
+                        
+                        class="form-control "
+                        placeholder="1000" 
+                        name="listings[price]" 
+                        required>
+                        <div class="invalid-feedback">
+                            Please Enter Price!
+                        </div>
+                    </div>
+                    <div class="mb-3 col-md-8">
+                        <label class="form-label"> &nbsp;Country</label>
+                        <input 
+                        type="text" 
+                        class="form-control "
+                        placeholder="India" 
+                        name="listings[country]" 
+                        required>
+                        <div class="invalid-feedback">
+                            Please Enter Country!
+                         </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"> &nbsp;Location</label>
+                    <input 
+                    type="text" 
+                    class="form-control "
+                    placeholder="Delhi" 
+                    name="listings[location]" 
+                    required>
+                    <div class="invalid-feedback">
+                        Please Enter Location!
+                     </div>
+                </div>
+                
+        
+                <br>
+                <div style="text-align: center;"><button>Submit</button></div><br><br>
+            </form>
+        </div>
+    </div>
+</div>
+
+    
