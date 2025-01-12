@@ -58,8 +58,9 @@
             </div>
         </div>
         <% } %>
-        <hr>
         
+        <% if(data.reviews.length > 0){ %>
+        <hr>
         <div>
             <h1>All Reviews</h1><br>
             <ul>
@@ -72,7 +73,12 @@
             <% } %>
             </ul>
         </div>
+        <% } %>
+        
     </div>
+
+    
+    
 
 
 

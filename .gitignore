@@ -1,3 +1,4 @@
 #files to ignore
 .env
-node_modules
+node_modules/
+**/.DS_STORE

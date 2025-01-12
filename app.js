@@ -1,17 +1,19 @@
 if(process.env.NODE_ENV != "production"){
     require('dotenv').config();
 }
-console.log(process.env.CLOUD_NAME);
+// console.log(process.env.CLOUD_NAME);
 
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+// const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+const MONGO_URL = process.env.ATLASDB_URL;
 const path = require("path");
 const MethodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
 const session = require("express-session");
+const MongoStore = require('connect-mongo');
 const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
@@ -28,15 +30,27 @@ app.use(MethodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
+const store = MongoStore.create({
+    mongoUrl : MONGO_URL,
+    crypto :{
+        secret : process.env.SECRET
+    },
+    touchAfter : 24*3600,
+})
+store.on("error",()=>{
+    console.log("Error in mongo store",err);
+})
 const sessOpt = {
-    secret : "secretcode",
+    store,
+    secret : process.env.SECRET,
     resave : false,
     saveUninitialized : true
 }
 
-app.get("/", (req, res) => {
-    res.send("Hi I am root");
-})
+// app.get("/", (req, res) => {
+//     res.send("Hi I am root");
+// })
+
 
 app.use(session(sessOpt));
 app.use(flash());

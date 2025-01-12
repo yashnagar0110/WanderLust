@@ -58,3 +58,7 @@ body{
     opacity: 0.2;
     background-color: white;
 }
+#map { 
+    height: 400px;
+    width: 80vh;
+}
