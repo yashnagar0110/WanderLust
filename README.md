@@ -58,15 +58,24 @@ A full-stack web application built with **Node.js, Express, MongoDB, and EJS** f
 
 ## 📂 Project Structure
 
-├── app.js                # Main server file
+├── app.js                # Main server file 
+
 ├── cloudConfig.js        # Cloudinary configuration
+
 ├── middleware.js         # Custom middlewares
+
 ├── schema.js             # Joi validation schemas
+
 ├── package.json          # Dependencies and scripts
+
 ├── routes/               # Express route handlers
+
 ├── models/               # Mongoose models
+
 ├── views/                # EJS templates
+
 ├── public/               # Static assets (CSS, JS, images)
+
 └── utils/                # Utility functions (e.g. ExpressError)
 
 ---
