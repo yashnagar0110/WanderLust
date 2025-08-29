@@ -3,6 +3,7 @@
 A full-stack web application built with **Node.js, Express, MongoDB, and EJS** for managing travel listings and reviews. Users can register, log in, create and manage listings, post reviews, and upload images using **Cloudinary**.
 
 ---
+Live Link : https://wanderlust-3-5n38.onrender.com/listings
 
 ## 🚀 Features
 
@@ -49,7 +50,7 @@ A full-stack web application built with **Node.js, Express, MongoDB, and EJS** f
     CLOUD_API_SECRET=your_cloudinary_api_secret
 
 4. Start the application:
-    npm start
+    node app.js
 
 5. Open in your browser:
     http://localhost:8080
